@@ -18,7 +18,7 @@
         <p><i>Please fill this form to proceed</i></p>
     </div>
     <div class="form-group container-sm text-white" style="background-color: gray;padding: 3mm">
-        <div class="row">
+        <div class="row mt-4">
             <div class="col">
                 <label for="inputName" class="form-check-label">Name</label>
                 <input type="text" id="inputName" class="form-control" name="name" required>
@@ -30,9 +30,12 @@
             <div class="col">
                 <label for="inputEmail" class="form-check-label">Email</label>
                 <input type="email" id="inputEmail" class="form-control" required>
+                <div id="emailAlert" class="alert alert-danger alert-dismissible fade mt-3 show" data-dismiss="alert" hidden>
+                    Email should be valid
+                </div>
             </div>
         </div>
-        <div class="row mt-3">
+        <div class="row mt-4">
             <div class="col">
                 <label for="inputDes" class="form-check-label">Designation</label>
                 <select id="inputDes" class="form-control" name="Designation" onchange="populate(this.id)">
@@ -42,9 +45,9 @@
                 </select>
             </div>
         </div>
-        <div class="form-check-inline" style="padding: 3mm;" id="genderSelect">
+        <div class="form-check-inline mt-4" style="padding: 3mm;" id="genderSelect">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" selected name="optradio">Male
+              <input type="radio" class="form-check-input" name="optradio">Male
             </label>
         </div>
         <div class="form-check-inline">
@@ -61,16 +64,28 @@
             <div class="col" id="student" hidden>
                 <label for="inputRollNo" class="form-check-label">Roll No.</label>
                 <input type="text" id="inputRollNo" class="form-control" required>
+                <div id="rollnoAlert" class="alert alert-danger alert-dismissible fade mt-3 show" data-dismiss="alert" hidden>
+                    Roll No should be atleast 8 letters
+                </div>
                 <label for="inputDep" class="form-check-label">Department</label>
-                <input type="text" id="inputDep" class="form-control" required>
+                <input type="text" id="inputStuDep" class="form-control" required>
+                <div id="studepAlert" class="alert alert-danger alert-dismissible fade mt-3 show" data-dismiss="alert" hidden>
+                    Department should be a string
+                </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-2">
             <div class="col" id="employee" hidden>
                 <label for="inputRollNo" class="form-check-label">Employee ID</label>
                 <input type="text" id="inputEmpID" class="form-control" required>
+                <div id="empidAlert" class="alert alert-danger alert-dismissible fade mt-3 show" data-dismiss="alert" hidden>
+                    Employee ID should be atleast 8 letters
+                </div>
                 <label for="inputDep" class="form-check-label">Department</label>
                 <input type="text" id="inputEmpDep" class="form-control" required>
+                <div id="empdepAlert" class="alert alert-danger alert-dismissible fade mt-3 show" data-dismiss="alert" hidden>
+                    Department should be a string
+                </div>
             </div>
         </div>
         <button id="submit" class="btn btn-success btn-block mt-3">Submit</button>
