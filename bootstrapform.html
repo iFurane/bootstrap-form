@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Submission Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<!--header-->
+
+<body style="background-color:rgb(50,50,50)">
+    <div class="container-sm p-3 bg-dark text-white">
+        <h1>Submission form</h1>
+        <p><i>Please fill this form to proceed</i></p>
+    </div>
+    <div class="form-group container-sm text-white" style="background-color: gray;padding: 3mm">
+        <div class="row">
+            <div class="col">
+                <label for="inputName" class="form-check-label">Name</label>
+                <input type="text" id="inputName" class="form-control" name="name" required>
+                <!--name alert-->
+                <div id="nameAlert" class="alert alert-danger alert-dismissible fade mt-3 show" data-dismiss="alert" hidden>
+                    Name should be atleast 2 letters
+                </div>
+            </div>
+            <div class="col">
+                <label for="inputEmail" class="form-check-label">Email</label>
+                <input type="email" id="inputEmail" class="form-control" required>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <label for="inputDes" class="form-check-label">Designation</label>
+                <select id="inputDes" class="form-control" name="Designation" onchange="populate(this.id)">
+                    <option disabled hidden selected value>Choose Designation </option>
+                    <option value="professor">Professor</option>
+                    <option value="student">Student</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-check-inline" style="padding: 3mm;" id="genderSelect">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" selected name="optradio">Male
+            </label>
+        </div>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optradio">Female
+            </label>
+        </div>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optradio">Others
+            </label>
+        </div>
+        <div class="row">
+            <div class="col" id="student" hidden>
+                <label for="inputRollNo" class="form-check-label">Roll No.</label>
+                <input type="text" id="inputRollNo" class="form-control" required>
+                <label for="inputDep" class="form-check-label">Department</label>
+                <input type="text" id="inputDep" class="form-control" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="employee" hidden>
+                <label for="inputRollNo" class="form-check-label">Employee ID</label>
+                <input type="text" id="inputEmpID" class="form-control" required>
+                <label for="inputDep" class="form-check-label">Department</label>
+                <input type="text" id="inputEmpDep" class="form-control" required>
+            </div>
+        </div>
+        <button id="submit" class="btn btn-success btn-block mt-3">Submit</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
